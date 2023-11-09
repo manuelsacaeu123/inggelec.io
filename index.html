@@ -473,7 +473,7 @@ Implementación de tecnologías de vanguardia para una conectividad robusta.<br>
 
         </div>
 
-        <form action="" class="contact-form">
+        <form action="mensaje.php" method="psot" contact-form">
 
           <div class="form-wrapper">
 
@@ -533,7 +533,7 @@ Implementación de tecnologías de vanguardia para una conectividad robusta.<br>
 
           </div>
 
-          <button type="submit" class="btn btn-primary">Enviar</button>
+          <button type="submit" class="btn btn-primary"  onclick="enviarWhatsApp()">Enviar</button>
 
         </form>
 
@@ -599,3 +599,22 @@ Implementación de tecnologías de vanguardia para una conectividad robusta.<br>
 
 </html>
 
+
+
+<script>
+  function enviarWhatsApp() {
+      var name = document.getElementById("name").value;
+      var email = document.getElementById("email").value;
+      var phone = document.getElementById("phone").value;
+      var message = document.getElementById("message").value;
+
+      // Construir el enlace de WhatsApp con el mensaje personalizado
+      var whatsappLink = "https://wa.me/59169580835?text=Hola mi nombre es%20" + encodeURIComponent(name) 
+      + ",%20 Correo electronico: %20" + encodeURIComponent(email)
+      + ",%20 Celular: %20" + encodeURIComponent(phone)
+      + ",%20 Mensaje: %20" + encodeURIComponent(message);
+
+      // Abrir el enlace en una nueva pestaña
+      window.open(whatsappLink, '_blank');
+  }
+</script>
